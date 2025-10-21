@@ -1,0 +1,3 @@
+gnuradio
+numpy
+matplotlib
