@@ -1,4 +1,8 @@
 # gnss-freq-hopper
+<p align="center">
+  <img src="213.png" width="500" alt="GNSS Frequency Hopper Logo"/>
+</p>
+
 # 🛰️ GNSS Frequency Hopper
 
 مشروع تجريبي باستخدام **GNU Radio** و **Python** لتنفيذ قافز ترددي (Frequency Hopper) بين ترددات أنظمة GNSS المختلفة (GPS / GLONASS / Galileo).
