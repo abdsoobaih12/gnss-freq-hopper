@@ -9,76 +9,68 @@
 
 ---
 
-## 🌍 الفكرة
+## 🌍 Overview
 
-مشروع لتطبيق مفهوم <b>تبديل التردد (Frequency Hopping)</b> ضمن نطاقات GNSS باستخدام Python و GNU Radio.  
-يقوم البرنامج بتغيير التردد كل <b>15ms</b> بشكل متتابع عبر مجموعة من الترددات المعرفة في المصفوفة:
-
+A project implementing the concept of <b>Frequency Hopping</b> across GNSS bands using Python and GNU Radio.  
+The program sequentially changes the frequency every <b>15ms</b> across a set of frequencies defined in the following array:
 ```python
 freq_array = [1602.0, 1575.42, 1561.1, 1246.0, 1227.6, 1207.14, 1176.45, 1191.0]
 ```
-الهدف هو دراسة السلوك الزمني والتحليلي لتبديل التردد ضمن بيئة اختبار إشارات GNSS.
+The goal is to study the temporal and analytical behavior of frequency hopping within a GNSS signal testing environment.
 
-⚙️ المتطلبات
-يُنصح باستخدام بيئة Conda لتثبيت GNU Radio بسهولة:
-
-bash
-Copy code
+⚙️ Prerequisites
+It is highly recommended to use a Conda environment to easily install GNU Radio:
+```
 conda create -n gnuradio python=3.10
 conda activate gnuradio
 conda install -c conda-forge gnuradio numpy matplotlib
-🚀 التشغيل
-يمكنك تشغيل المشروع بطريقتين:
+ ```
+🚀 How to Run
+You can run the project in two ways:
 
-1️⃣ من خلال GNU Radio Companion (GRC)
-افتح الملف:
-
-Copy code
+1️⃣ Through GNU Radio Companion (GRC)
+Open the file:
+```
 test_hopper.grc
-وشغّله من داخل GNU Radio Companion.
+```
+and execute it from within GNU Radio Companion.
 
-2️⃣ من خلال Python مباشرة
-لتجربة البرنامج بشكل مستقل:
-
-bash
-Copy code
+2️⃣ Directly via Python
+To test the program independently:
+```
 python test_hopper_standalone.py
-ستظهر نتائج مثل:
-
-bash
-Copy code
-[Hop #1] تبديل إلى: 1575.42 MHz
-[Hop #2] تبديل إلى: 1561.10 MHz
+```
+You will see an output like this:
+```
+[Hop #1] Switched to: 1575.42 MHz
+[Hop #2] Switched to: 1561.10 MHz
 ...
-✅ الاختبار اكتمل بنجاح!
-📁 تم حفظ البيانات في: gnss_hopper_output.dat
-📊 تحليل النتائج
-بعد التشغيل، يمكنك تحليل البيانات المخرجة:
-
-bash
-Copy code
+✅ Test completed successfully!
+📁 Data saved to: gnss_hopper_output.dat
+```
+📊 Output Analysis
+After running the program, you can analyze the output data:
+```
 python analyze_output.py gnss_hopper_output.dat
-سيُظهر الرسم البياني للترددات المتغيرة زمنياً.
+```
+This will display a graph of the time-varying frequencies.
 
-📺 صور النتائج والتحليل
-يوضّح الرسم البياني التالي كيفية تبديل الترددات كل 15ms عبر نطاقات GNSS المختلفة:
+📺 Results and Analysis Images
+The following graph illustrates how the frequencies switch every 15ms across the different GNSS bands:
 
-<p align="center"> <img src="gnss_hopper_analysis.png" alt="Frequency Hopping Analysis" width="700"/> </p>
-كما يتم حفظ نتائج التجربة في الملف:
-
-Copy code
+The experiment results are also saved in the file:
+```
 gnss_hopper_output.dat
-🧠 ملاحظات تقنية
-زمن القفزة الواحدة: 15ms
+```
+🧠 Technical Notes
+Single Hop Duration: 15ms
 
-معدل العينات (Sample Rate): 2.048 MHz
+Sample Rate: 2.048 MHz
 
-كل إشارة تُضرب بقيمة التردد المختار لتوليد خرج ترددي جديد.
+Each signal is multiplied by the chosen frequency value to generate a new frequency output.
 
-تم اختبار المشروع بنجاح على بيئة Windows + Conda.
+The project was successfully tested on a Windows + Conda environment.
 
-📜 الترخيص
-هذا المشروع مرخّص تحت رخصة MIT License.
-يمكنك استخدامه أو تعديله بحرية للأغراض الأكاديمية أو البحثية.
-
-<p align="center"> <b>🚀 Developed by Abdallah Sobaih</b><br/> <a href="https://github.com/abdsoobaih12/gnss-freq-hopper">🔗 GitHub Repository</a> </p> ```
+📜 License
+This project is licensed under the MIT License.
+You are free to use or modify it for academic or research purposes.
