@@ -57,6 +57,7 @@ This will display a graph of the time-varying frequencies.
 
 📺 Results and Analysis Images
 The following graph illustrates how the frequencies switch every 15ms across the different GNSS bands:
+![GNSS Spectrum Analysis](gnss_hopper_analysis.png)
 
 The experiment results are also saved in the file:
 ```
